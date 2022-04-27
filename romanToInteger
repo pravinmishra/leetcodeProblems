@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int romanToInt(string s) {
+        int ans = 0, num = 0;
+        for(int i = s.size() -1;~i;i--){
+            switch(s[i]){
+                case 'I': num = 1; break;
+                case 'V': num = 5; break;
+                case 'X': num = 10; break;
+                case 'L': num = 50; break;
+                case 'C': num = 100; break;
+                case 'D': num = 500; break;
+                case 'M': num = 1000; break;
+            }
+            cout<<"num*4:"<<num*4<<"\n";
+            if(num*4 < ans){
+                cout<<"ans-num:"<<ans-num<<"\n";
+                ans = ans-num;
+            }else{
+                cout<<"ans+num:"<<ans+num<<"\n";
+                ans = ans+num;
+            }
+            
+        }
+        return ans;
+    }
+};
